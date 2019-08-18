@@ -1,0 +1,83 @@
+<div class="main-container">
+	<header class="header-2">
+		<div class="header-nav">
+			<a class="active nav-link nav-text">
+        <div class="icon-carr"></div>
+				<span class="title" ></span>
+			</a>
+		</div>
+		<div class="header-nav">
+      <a class="active nav-link nav-text"></a>
+		</div>
+	<div class="header-nav">
+    <a class="active nav-link nav-text"></a>
+    </div>
+    <img src="/assets/grapes.svg" alt="logoEmbajador">
+
+    <img src="/assets/tomato.svg" alt="tomat">
+
+    <img src="/assets/carrot.svg" alt="logoEmbajador">
+
+   
+
+  </header>
+  <p>cool story bro</p>
+
+	<div class="content-container">
+		<div class="content-area">
+			<div class="clr-row">
+        <div class="clr-col-4 offset-xs-1">
+            <table class="table" clrDroppable (clrDrop)="onDropBack($event)">
+                <thead>
+                <tr>
+                    <th>Todo:</th>          
+                </tr>
+                <tr>
+                <!--(blur)="addList(box.value)"-->
+                  <input #box 
+                    (keyup.enter)="fileChange($event.target.value)"
+                    placeholder="Type in your todo">   
+                </tr> 
+                </thead>
+                <tbody>
+                <tr *ngIf="files.length===0">
+                    <td>Nothing to drag here...</td>
+                </tr>
+                <tr *ngFor="let list of files">                
+                    <td>                    
+                      <span class="label" [clrDraggable]="list">{{list.name}}
+                      </span>
+                        <div class="w-10 delete-icon"> 
+                          <button mat-icon-button>
+                            <i class="material-icons" (click)="delete(i)">delete</i>
+                          </button>
+                      </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="clr-col-4 offset-xs-1">
+            <table class="table" clrDroppable (clrDrop)="onDropToUpload($event)">
+                <thead>
+                <tr>
+                    <th>Drop here if done:</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngIf="droppedFiles.length===0">
+                    <td>Nothing to upload here...</td>
+                </tr>
+                <tr *ngFor="let file of droppedFiles">
+                    <td>
+                      <span class="label" [clrDraggable]="file">{{file.name}}
+                      </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,10 @@
+.title{
+    background-image: url('src/assets/carrot.png');
+    height: 16px;
+    width: 26px;
+    border-radius: 100%;
+    display: inline-block;
+    overflow:hidden;
+    /* Other styles here */
+  }
+ 
