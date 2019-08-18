@@ -36,7 +36,7 @@ value = '';
 
 
 droppedFiles: File[] = [];
-
+ 
 delete(index: any) {
   this.files.splice(index,1);
 }
@@ -51,7 +51,11 @@ delete(index: any) {
       to.push(item);
     }
   }
-
+  seconds=10;
+   /*
+    if seconds ==0
+    onDrptoUpload
+   */
   onDropToUpload(dragEvent: ClrDragEvent<File>) {
     console.log('dropped to upload');
     this.moveItem(dragEvent.dragDataTransfer, this.files, this.droppedFiles);
