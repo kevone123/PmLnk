@@ -2,7 +2,7 @@ let countdown=0;
 let seconds=1500;
 let breakTimer=25;
 let workTimer=5;
-let isPaused=true;
+let isPaused=true; 
 let isBreak=true;
 
 const status = document.getElementById('status');
